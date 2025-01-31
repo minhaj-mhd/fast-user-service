@@ -1,7 +1,8 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from db.session import engine, Base
-from routes import auth, users
+from db.session import engine
+from db.base import Base
+from routes import auth
 from core.config import settings
 
 @asynccontextmanager
@@ -19,4 +20,4 @@ app = FastAPI(
 )
 
 app.include_router(auth.router)
-app.include_router(users.router)
+# app.include_router(users.router)

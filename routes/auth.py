@@ -5,6 +5,11 @@ from db.models import User
 from schemas.user import UserCreate, UserResponse
 from schemas.token import Token
 from jose import jwt, JWTError
+
+from fastapi.security import OAuth2PasswordRequestForm
+from core.security import verify_password
+from core.config import settings
+
 from core.security import (
     get_password_hash, 
     create_access_token, 

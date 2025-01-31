@@ -3,7 +3,7 @@ from jose import jwt
 from datetime import datetime, timedelta
 from fastapi.security import OAuth2PasswordBearer
 from core.config import settings
-
+from fastapi import Depends
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 
